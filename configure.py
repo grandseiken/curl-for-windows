@@ -73,6 +73,7 @@ def configure_buildsystem(o):
         o.extend(['-G', 'msvs_version=' + options.toolchain])
 
     # gyp
+    o.append('--no-parallel')
     o.append('--depth=' + root_dir)
     o.append('-Goutput_dir=' + os.path.join(output_dir, options.target_arch))
     o.append('--generator-output=' + os.path.join(output_dir, options.target_arch))
